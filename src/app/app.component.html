@@ -1,15 +1,14 @@
 <mat-sidenav-container>
-  <mat-sidenav>Start</mat-sidenav>
+  <mat-sidenav mode="side" opened>
+    <mat-nav-list>
+      <a mat-list-item class="list-group-item clearfix" [routerLink]="['/directives']" routerLinkActive="active">
+        Directives
+      </a>
+      <a mat-list-item class="list-group-item clearfix"> Properties and Events Binding </a>
+      <a mat-list-item class="list-group-item clearfix"> Using service </a>
+    </mat-nav-list>
+  </mat-sidenav>
   <mat-sidenav-content>
-    <app-directives-component></app-directives-component>
-    <hr />
-    <hr />
-    <app-bindings-component></app-bindings-component>
-    <hr />
-    <hr />
-    <app-user-service></app-user-service>
-    <hr />
-    <hr />
-    <app-user-service-finish></app-user-service-finish>
+    <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>

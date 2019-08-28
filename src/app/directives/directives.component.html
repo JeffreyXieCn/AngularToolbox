@@ -1,38 +1,57 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
-      <h3>This is the directives component</h3>
+      <h3>Learn about Angular directives</h3>
       <br />
       <app-warning-alert></app-warning-alert>
       <app-success-alert></app-success-alert>
       <br />
-      <input type="text" class="form-control" [(ngModel)]="username" />
-      <p>You typed: {{ username }}</p>
-      <button class="btn btn-primary" [disabled]="username.length == 0" (click)="username = ''">Reset</button>
+      <label>Demo of two way properties binding with [(ngModel)]:</label>
+      <div>
+        <input type="text" class="form-control" [(ngModel)]="username" />
+        <p>You typed: {{ username }}</p>
+        <button class="btn btn-primary" [disabled]="username.length == 0" (click)="username = ''">Reset</button>
+      </div>
       <br />
-      <button class="btn btn-primary" (click)="onToggleDetails($event)">Display Details</button>
-      <!--<p [hidden]="!displayDetails">Secret Password = tuna</p>-->
-      <p *ngIf="displayDetails">Secret Password = tuna</p>
-      <p
-        *ngFor="let str of buttonClicks; index as i"
-        [ngStyle]="{ backgroundColor: getColor(i) }"
-        [ngClass]="{ 'white-text': i + 1 >= 5 }"
-      >
-        {{ str }}
-      </p>
-      <p>Demo fo ngSwitch</p>
+      <br />
+      <label>Demo of *ngIf, *ngFor, ngStyle and ngClass:</label>
+      <div>
+        <button class="btn btn-primary" (click)="onToggleDetails($event)">Display Details</button>
+        <!--<p [hidden]="!displayDetails">Secret Password = tuna</p>-->
+        <p *ngIf="displayDetails">Secret Password = tuna</p>
+        <p
+          *ngFor="let str of buttonClicks; index as i"
+          [ngStyle]="{ backgroundColor: getColor(i) }"
+          [ngClass]="{ 'white-text': i + 1 >= 5 }"
+        >
+          {{ str }}
+        </p>
+      </div>
+      <label>Demo of ngSwitch:</label>
       <div [ngSwitch]="buttonClicks.length">
-        <p *ngSwitchCase="0">You haven't clicked the button</p>
+        <p *ngSwitchCase="0">You haven't clicked the button "Display Details"</p>
         <p *ngSwitchCase="3">You clicked the button 3 time</p>
         <p *ngSwitchCase="5">You clicked the button 5 times</p>
         <p *ngSwitchDefault>Keep clicking!</p>
       </div>
-
-      <p appBasicHighlight>Style me with basic directive</p>
-      <p appBetterHighlight>Move mouse over me, style me with better directive</p>
-      <p appBetterHighlight [defaultColor]="'pink'" highlightColor="red">You can bind to directive properties</p>
-      <p *appUnless="3 > 5">Demo of custom structure directive, unless, which is the opposite of ngIf</p>
-      <p *appUnless="6 > 5">Demo of custom structure directive, unless, which is the opposite of ngIf</p>
+      <br />
+      <br />
+      <label>Demo of property directive:</label>
+      <div>
+        <p appBasicHighlight>Style me with basic directive (set element style directly)</p>
+        <p appBetterHighlight>
+          Move mouse over me, style me with better directive (set element style with renderer, @HostBinding and
+          @HostListener)
+        </p>
+        <p appBetterHighlight [defaultColor]="'pink'" highlightColor="red">You can bind to directive properties</p>
+      </div>
+      <br />
+      <br />
+      <label>Demo of custom structure directive, unless, which is the opposite of ngIf:</label>
+      <div>
+        <p *appUnless="3 > 5">This is displayed, unless 3 > 5 (since 3 < 5)</p>
+        <p *appUnless="6 > 5">This is displayed, unless 6 > 5 (since 6 > 5)</p>
+      </div>
     </div>
   </div>
 </div>
