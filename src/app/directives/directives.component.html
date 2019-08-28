@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h3>This is the directives component</h3>
+      <br />
+      <app-warning-alert></app-warning-alert>
+      <app-success-alert></app-success-alert>
+      <br />
+      <input type="text" class="form-control" [(ngModel)]="username" />
+      <p>You typed: {{ username }}</p>
+      <button class="btn btn-primary" [disabled]="username.length == 0" (click)="username = ''">Reset</button>
+      <br />
+      <button class="btn btn-primary" (click)="onToggleDetails($event)">Display Details</button>
+      <!--<p [hidden]="!displayDetails">Secret Password = tuna</p>-->
+      <p *ngIf="displayDetails">Secret Password = tuna</p>
+      <p
+        *ngFor="let str of buttonClicks; index as i"
+        [ngStyle]="{ backgroundColor: getColor(i) }"
+        [ngClass]="{ 'white-text': i + 1 >= 5 }"
+      >
+        {{ str }}
+      </p>
+      <p>Demo fo ngSwitch</p>
+      <div [ngSwitch]="buttonClicks.length">
+        <p *ngSwitchCase="0">You haven't clicked the button</p>
+        <p *ngSwitchCase="3">You clicked the button 3 time</p>
+        <p *ngSwitchCase="5">You clicked the button 5 times</p>
+        <p *ngSwitchDefault>Keep clicking!</p>
+      </div>
+
+      <p appBasicHighlight>Style me with basic directive</p>
+      <p appBetterHighlight>Move mouse over me, style me with better directive</p>
+      <p appBetterHighlight [defaultColor]="'pink'" highlightColor="red">You can bind to directive properties</p>
+      <p *appUnless="3 > 5">Demo of custom structure directive, unless, which is the opposite of ngIf</p>
+      <p *appUnless="6 > 5">Demo of custom structure directive, unless, which is the opposite of ngIf</p>
+    </div>
+  </div>
+</div>
