@@ -1,10 +1,12 @@
 <mat-sidenav-container>
   <mat-sidenav mode="side" opened>
-    <mat-nav-list>
+    <mat-nav-list disableRipple="true">
       <a mat-list-item class="list-group-item clearfix" [routerLink]="['/directives']" routerLinkActive="active">
         Directives
       </a>
-      <a mat-list-item class="list-group-item clearfix"> Properties and Events Binding </a>
+      <a mat-list-item class="list-group-item clearfix" [routerLink]="['/bindings']" routerLinkActive="active">
+        Properties and Events Binding
+      </a>
       <a mat-list-item class="list-group-item clearfix"> Using service </a>
     </mat-nav-list>
   </mat-sidenav>
