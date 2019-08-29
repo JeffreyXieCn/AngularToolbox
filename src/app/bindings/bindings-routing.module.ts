@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { BindingsComponent } from './bindings.component';
 
-const directivesRoutes: Routes = [
+const bindingsRoutes: Routes = [
   {
     path: 'bindings',
     component: BindingsComponent
@@ -10,7 +10,7 @@ const directivesRoutes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(directivesRoutes)],
+  imports: [RouterModule.forChild(bindingsRoutes)],
   exports: [RouterModule]
 })
 export class BindingsRoutingModule {}
