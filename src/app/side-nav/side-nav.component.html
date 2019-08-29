@@ -1,2 +1,11 @@
-<p>side-nav works!</p>
-This is the side-nav
+<mat-nav-list disableRipple="true">
+  <a mat-list-item class="list-group-item clearfix" [routerLink]="['/directives']" routerLinkActive="active">
+    Directives
+  </a>
+  <a mat-list-item class="list-group-item clearfix" [routerLink]="['/bindings']" routerLinkActive="active">
+    Properties and Events Binding
+  </a>
+  <a mat-list-item class="list-group-item clearfix" [routerLink]="['/services']" routerLinkActive="active">
+    Using service
+  </a>
+</mat-nav-list>

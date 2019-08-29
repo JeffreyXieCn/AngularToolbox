@@ -12,19 +12,11 @@ import { SideNavComponent } from './side-nav/side-nav.component';
 import { DirectivesModule } from './directives/directives.module';
 import { AppRoutingModule } from './app-routing.module';
 import { BindingsModule } from './bindings/bindings.module';
+import { ServicesModule } from './services/services.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    UserServiceComponent,
-    ActiveUsersComponent,
-    InactiveUsersComponent,
-    ActiveUsersFinishComponent,
-    InactiveUsersFinishComponent,
-    UserServiceFinishComponent,
-    SideNavComponent
-  ],
-  imports: [BrowserModule, SharedModule, AppRoutingModule, DirectivesModule, BindingsModule],
+  declarations: [AppComponent, SideNavComponent],
+  imports: [BrowserModule, SharedModule, AppRoutingModule, DirectivesModule, BindingsModule, ServicesModule],
   providers: [],
   bootstrap: [AppComponent]
 })

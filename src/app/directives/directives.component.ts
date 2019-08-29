@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { LoggingService } from '../services/logging.service';
+import { LoggingService } from '../shared/logging.service';
 
 @Component({
   selector: 'app-directives-component',

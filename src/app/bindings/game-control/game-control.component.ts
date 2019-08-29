@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { LoggingService } from 'src/app/services/logging.service';
+import { LoggingService } from 'src/app/shared/logging.service';
 
 @Component({
   selector: 'app-game-control',
