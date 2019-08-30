@@ -9,6 +9,7 @@ import { BindingsModule } from './bindings/bindings.module';
 import { ServicesModule } from './services/services.module';
 import { RoutingsModule } from './routings/routings.module';
 import { ComponentsModule } from './components/components.module';
+import { MyFormsModule } from './forms/forms.module';
 
 @NgModule({
   declarations: [AppComponent, SideNavComponent],
@@ -20,7 +21,8 @@ import { ComponentsModule } from './components/components.module';
     DirectivesModule,
     BindingsModule,
     ServicesModule,
-    RoutingsModule
+    RoutingsModule,
+    MyFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
