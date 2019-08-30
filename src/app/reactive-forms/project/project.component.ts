@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
+import { CustomValidators } from './custom-validator';
 
 @Component({
   selector: 'app-project',
@@ -20,7 +21,7 @@ export class ProjectComponent implements OnInit {
   ngOnInit() {
     this.projectForm = new FormGroup({
       projectname: new FormControl(null, [Validators.required, this.forbiddenNames.bind(this)]),
-      email: new FormControl(null, [Validators.required, Validators.email], this.forbiddenEmails),
+      email: new FormControl(null, [Validators.required, Validators.email], CustomValidators.asyncForbiddenEmails),
       projectstatus: new FormControl('Critical')
     });
   }
@@ -30,19 +31,6 @@ export class ProjectComponent implements OnInit {
       return { nameIsForbidden: true };
     }
     return null;
-  }
-
-  forbiddenEmails(control: FormControl): Promise<any> | Observable<any> {
-    const promise = new Promise<any>((resolve, reject) => {
-      setTimeout(() => {
-        if (control.value === 'test@test.com') {
-          resolve({ emailIsForbidden: true });
-        } else {
-          resolve(null);
-        }
-      }, 1500);
-    });
-    return promise;
   }
 
   onSubmit() {
