@@ -10,6 +10,7 @@ import { ServicesModule } from './services/services.module';
 import { RoutingsModule } from './routings/routings.module';
 import { ComponentsModule } from './components/components.module';
 import { MyFormsModule } from './forms/forms.module';
+import { MyReactiveFormsModule } from './reactive-forms/reactive-forms.module';
 
 @NgModule({
   declarations: [AppComponent, SideNavComponent],
@@ -22,7 +23,8 @@ import { MyFormsModule } from './forms/forms.module';
     BindingsModule,
     ServicesModule,
     RoutingsModule,
-    MyFormsModule
+    MyFormsModule,
+    MyReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
