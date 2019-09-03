@@ -11,6 +11,7 @@ import { RoutingsModule } from './routings/routings.module';
 import { ComponentsModule } from './components/components.module';
 import { MyFormsModule } from './forms/forms.module';
 import { MyReactiveFormsModule } from './reactive-forms/reactive-forms.module';
+import { PipesModule } from './pipes/pipes.module';
 
 @NgModule({
   declarations: [AppComponent, SideNavComponent],
@@ -24,7 +25,8 @@ import { MyReactiveFormsModule } from './reactive-forms/reactive-forms.module';
     ServicesModule,
     RoutingsModule,
     MyFormsModule,
-    MyReactiveFormsModule
+    MyReactiveFormsModule,
+    PipesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
