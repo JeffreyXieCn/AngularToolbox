@@ -1,7 +1,6 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
-      <!--
+<div class="row">
+  <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+    <!--
           Create a Form with the following Controls and Validators
           1) Project Name (should not be empty)
           2) Mail (should not be a empty and a valid email)
@@ -15,49 +14,48 @@
           Upon submitting the form, simply print the value to the console
       -->
 
-      <form [formGroup]="projectForm" (ngSubmit)="onSubmit()">
-        <div class="form-group">
-          <label for="projectname">Project Name</label>
-          <input type="text" id="projectname" formControlName="projectname" class="form-control" />
-          <small id="projectnameHelpBlock" class="form-text text-muted">
-            Project name is required, and can not be Test, Temp, aaa or abc
-          </small>
-          <span *ngIf="projectForm.get('projectname').invalid && projectForm.get('projectname').touched">
-            <span *ngIf="projectForm.get('projectname').errors['nameIsForbidden']"> This name is not allowed!</span>
-            <span *ngIf="projectForm.get('projectname').errors['required']"> This field is required!</span>
-          </span>
-        </div>
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" formControlName="email" class="form-control" />
-          <small id="emailHelpBlock" class="form-text text-muted">
-            Email is required, should be valid and can not be test@test.com
-          </small>
-          <span *ngIf="projectForm.get('email').invalid && projectForm.get('email').touched">
-            <span *ngIf="projectForm.get('email').errors['emailIsForbidden']" class="form-text">
-              This email is not allowed!</span
-            >
-            <span *ngIf="projectForm.get('email').errors['required']" class="form-text"> This field is required!</span>
-          </span>
-        </div>
-        <div class="form-group">
-          <label for="projectstatus">Project Status</label>
-          <select id="projectstatus" formControlName="projectstatus" class="form-control">
-            <option *ngFor="let status of projectStatuses" [value]="status"> {{ status }}</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <span class="form-text" *ngIf="projectForm.invalid && projectForm.touched">The form is not valid</span><br />
-          <button class="btn btn-primary" type="submit" [disabled]="projectForm.invalid">Submit</button>
-        </div>
-      </form>
-
-      <div *ngIf="projectFormSubmitted">
-        <h3>Your input:</h3>
-        <p>Project Name: {{ this.projectForm.get('projectname').value }}</p>
-        <p>Email: {{ this.projectForm.get('email').value }}</p>
-        <p>Project Status: {{ this.projectForm.get('projectstatus').value }}</p>
+    <form [formGroup]="projectForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="projectname">Project Name</label>
+        <input type="text" id="projectname" formControlName="projectname" class="form-control" />
+        <small id="projectnameHelpBlock" class="form-text text-muted">
+          Project name is required, and can not be Test, Temp, aaa or abc
+        </small>
+        <span *ngIf="projectForm.get('projectname').invalid && projectForm.get('projectname').touched">
+          <span *ngIf="projectForm.get('projectname').errors['nameIsForbidden']"> This name is not allowed!</span>
+          <span *ngIf="projectForm.get('projectname').errors['required']"> This field is required!</span>
+        </span>
       </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" formControlName="email" class="form-control" />
+        <small id="emailHelpBlock" class="form-text text-muted">
+          Email is required, should be valid and can not be test@test.com
+        </small>
+        <span *ngIf="projectForm.get('email').invalid && projectForm.get('email').touched">
+          <span *ngIf="projectForm.get('email').errors['emailIsForbidden']" class="form-text">
+            This email is not allowed!</span
+          >
+          <span *ngIf="projectForm.get('email').errors['required']" class="form-text"> This field is required!</span>
+        </span>
+      </div>
+      <div class="form-group">
+        <label for="projectstatus">Project Status</label>
+        <select id="projectstatus" formControlName="projectstatus" class="form-control">
+          <option *ngFor="let status of projectStatuses" [value]="status"> {{ status }}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <span class="form-text" *ngIf="projectForm.invalid && projectForm.touched">The form is not valid</span><br />
+        <button class="btn btn-primary" type="submit" [disabled]="projectForm.invalid">Submit</button>
+      </div>
+    </form>
+
+    <div *ngIf="projectFormSubmitted">
+      <h3>Your input:</h3>
+      <p>Project Name: {{ this.projectForm.get('projectname').value }}</p>
+      <p>Email: {{ this.projectForm.get('email').value }}</p>
+      <p>Project Status: {{ this.projectForm.get('projectstatus').value }}</p>
     </div>
   </div>
 </div>

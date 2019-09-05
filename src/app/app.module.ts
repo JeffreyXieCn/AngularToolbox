@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
+import { AppBootstrapModule } from './shared/app-bootstrap.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { DirectivesModule } from './directives/directives.module';
 import { AppRoutingModule } from './app-routing.module';
@@ -12,12 +14,15 @@ import { ComponentsModule } from './components/components.module';
 import { MyFormsModule } from './forms/forms.module';
 import { MyReactiveFormsModule } from './reactive-forms/reactive-forms.module';
 import { PipesModule } from './pipes/pipes.module';
+import { NgxBootstrapModule } from './ngx-bootstrap/ngx-bootstrap.module';
 
 @NgModule({
   declarations: [AppComponent, SideNavComponent],
   imports: [
     BrowserModule,
     SharedModule,
+    AppBootstrapModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     ComponentsModule,
     DirectivesModule,
@@ -26,7 +31,8 @@ import { PipesModule } from './pipes/pipes.module';
     RoutingsModule,
     MyFormsModule,
     MyReactiveFormsModule,
-    PipesModule
+    PipesModule,
+    NgxBootstrapModule
   ],
   providers: [],
   bootstrap: [AppComponent]
