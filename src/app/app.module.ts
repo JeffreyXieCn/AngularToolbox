@@ -15,6 +15,7 @@ import { MyFormsModule } from './forms/forms.module';
 import { MyReactiveFormsModule } from './reactive-forms/reactive-forms.module';
 import { PipesModule } from './pipes/pipes.module';
 import { NgxBootstrapModule } from './ngx-bootstrap/ngx-bootstrap.module';
+import { MyHttpModule } from './http/http.module';
 
 @NgModule({
   declarations: [AppComponent, SideNavComponent],
@@ -32,7 +33,8 @@ import { NgxBootstrapModule } from './ngx-bootstrap/ngx-bootstrap.module';
     MyFormsModule,
     MyReactiveFormsModule,
     PipesModule,
-    NgxBootstrapModule
+    NgxBootstrapModule,
+    MyHttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]
